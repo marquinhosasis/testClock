@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset= iso-8859-1">
+    <title>Clock</title>
+    <script type="text/javascript">
+
+    function Clock(){
+        var data = new Date();
+        var horas = data.getHours();
+        var minutos = data.getMinutes();
+        var segundos = data.getSeconds();
+
+        if(horas < 10){
+            horas = "0"+horas;
+        }
+         if(minutos < 10){
+            minutos = "0"+minutos;
+        }
+         if(segundos < 10){
+            segundos = "0"+ segundos;
+        }
+
+        document.getElementById("Clock").innerHTML=horas+":"+minutos+":"+segundos;
+    }
+
+    window.setInterval("Clock()",1000);
+    </script>
+
+    <style type="text/css">
+    #Clock{
+        color: #f90;
+        font:blod 48px arial;
+        padding:50px;
+        margin: 40px;
+    }
+    </style>
+
+</head>
+
+<body onload="Clock();">
+
+    <div id="Clock"></div>
+
+</body>
+
+</html>
